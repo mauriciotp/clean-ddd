@@ -24,7 +24,7 @@ describe('Comment on Question', () => {
     await inMemoryQuestionsRepository.create(question)
 
     await sut.execute({
-      authorId: question.id.toString(),
+      authorId: question.authorId.toString(),
       questionId: question.id.toString(),
       content: 'Comentário teste',
     })
