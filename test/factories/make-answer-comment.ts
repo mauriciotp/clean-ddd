@@ -5,7 +5,7 @@ import {
 } from '@/domain/forum/enterprise/entities/answer-comment'
 import { faker } from '@faker-js/faker'
 
-export function MakeAnswerComment(
+export function makeAnswerComment(
   override: Partial<AnswerCommentProps> = {},
   id?: UniqueEntityID,
 ) {

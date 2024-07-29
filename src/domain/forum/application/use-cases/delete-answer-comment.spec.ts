@@ -1,6 +1,6 @@
 import { InMemoryAnswerCommentsRepository } from 'test/repositories/in-memory-answer-comments-repository'
 import { DeleteAnswerCommentUseCase } from './delete-answer-comment'
-import { MakeAnswerComment } from 'test/factories/make-answer-comment'
+import { makeAnswerComment } from 'test/factories/make-answer-comment'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
 let inMemoryAnswerCommentsRepository: InMemoryAnswerCommentsRepository
@@ -13,7 +13,7 @@ describe('Delete Answer Comment', () => {
   })
 
   it('should be able to delete a answer comment', async () => {
-    const answerComment = MakeAnswerComment()
+    const answerComment = makeAnswerComment()
 
     inMemoryAnswerCommentsRepository.create(answerComment)
 
@@ -26,7 +26,7 @@ describe('Delete Answer Comment', () => {
   })
 
   it('should NOT be able to delete a answer comment', async () => {
-    const answerComment = MakeAnswerComment({
+    const answerComment = makeAnswerComment({
       authorId: new UniqueEntityID('author-1'),
     })
 
